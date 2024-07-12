@@ -1,85 +1,28 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Marvisur logo" class="logo" src="@/assets/logo_marvisur.png" width="165" height="56" />
-
-    <div class="wrapper">
-      <HelloWorld msg="STATUS DIARIO DE FLOTA NACIONAL" />
-
-      <nav>
-        <RouterLink to="/">Información General</RouterLink>
-        <RouterLink to="/about">Relevos</RouterLink>
-      </nav>
+  <div class="app-content">
+    <TituloPrincipalVue />
+    <div class="card">
+      <BuscadorGeneralVue />
     </div>
-  </header>
-
-  <RouterView />
+  </div>
 </template>
 
+<script lang="ts" setup>
+import TituloPrincipalVue from "./components/TituloPrincipal.vue";
+import BuscadorGeneralVue from "./components/BuscadorGeneral.vue";
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.app-content {
+  margin-top: 100px; /* Ajusta este valor según la altura de tu título */
+  padding: 20px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 20px;
+  margin-top: 20px; /* Espacio entre el título y el buscador */
 }
 </style>
+
